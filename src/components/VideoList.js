@@ -1,4 +1,5 @@
-import { Grid, Paper, Typography } from "@mui/material";
+import { Grid } from "@material-ui/core";
+
 import VideoItem from "./VideoItem";
 
 const VideoList = ({ videos, onVideoSelect }) => {
@@ -9,15 +10,11 @@ const VideoList = ({ videos, onVideoSelect }) => {
       video={video}
     />
   ));
+
   return (
-    <Paper elevation={3} sx={{ padding: 2, maxHeight: 600, overflowY: "auto" }}>
-      <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
-        Up next
-      </Typography>
-      <Grid container spacing={1}>
-        {listOfVideos}
-      </Grid>
-    </Paper>
+    <Grid container spacing={10}>
+      {listOfVideos}
+    </Grid>
   );
 };
 
