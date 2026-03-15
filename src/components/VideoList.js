@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
 import VideoItem from "./VideoItem";
 
 const VideoList = ({ videos, onVideoSelect }) => {
@@ -10,16 +10,14 @@ const VideoList = ({ videos, onVideoSelect }) => {
     />
   ));
   return (
-    <Grid
-      container
-      spacing={1}
-      sx={{
-        maxHeight: "600px",
-        overflowY: "auto",
-      }}
-    >
-      {listOfVideos}
-    </Grid>
+    <Paper elevation={3} sx={{ padding: 2, maxHeight: 600, overflowY: "auto" }}>
+      <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
+        Up next
+      </Typography>
+      <Grid container spacing={1}>
+        {listOfVideos}
+      </Grid>
+    </Paper>
   );
 };
 
